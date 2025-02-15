@@ -7,8 +7,7 @@ import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:get/get_state_manager/src/simple/get_view.dart';
 import 'package:new_task/Utilis/custom_snacbar.dart';
 import 'dart:html' as html;
-import 'dart:ui' as ui;
-
+import 'dart:ui_web' as ui_web;
 import '../Controller/home_controller.dart';
 
 class HomeScreen extends GetView<HomeController> {
@@ -79,7 +78,7 @@ class HomeScreen extends GetView<HomeController> {
 
                   final viewType = 'image-${DateTime.now().millisecondsSinceEpoch}';
                   // ignore: undefined_prefixed_name
-                  ui.platformViewRegistry.registerViewFactory(viewType, (int viewId) => imgElement);
+                  ui_web.platformViewRegistry.registerViewFactory(viewType, (int viewId) => imgElement);
 
                   return GestureDetector(
                     onDoubleTap: () {
